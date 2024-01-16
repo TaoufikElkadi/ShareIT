@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ShareItApp: App {
+    @StateObject var appViewModel = AppViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeScreenView()
+                .environmentObject(appViewModel)
         }
     }
 }
